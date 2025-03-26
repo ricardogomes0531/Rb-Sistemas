@@ -1,8 +1,10 @@
+using Web.Shared.Ioc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddRepositoryServices();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

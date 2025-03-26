@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Web.Shared.Repository.Interfaces;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -7,14 +8,19 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUserRepository _repo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            IUserRepository repo
+            )
         {
             _logger = logger;
+            _repo = repo;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var resultado = await _repo.GetUserByIdAsync(1);
             return View();
         }
 
