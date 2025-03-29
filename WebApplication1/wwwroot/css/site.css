@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.dropdown-menu {
+    background-color: #f8f9fa; /* Cor de fundo clara */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+.dropdown-item {
+    font-weight: bold; /* Fonte em negrito */
+    color: #007bff; /* Azul para o texto */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animação */
+}
+
+    .dropdown-item:hover {
+        background-color: #007bff; /* Fundo azul no hover */
+        color: white; /* Texto branco no hover */
+        border-radius: 4px; /* Bordas arredondadas no hover */
+    }
