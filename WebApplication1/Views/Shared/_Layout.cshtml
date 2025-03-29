@@ -9,68 +9,78 @@
     <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-<!-- Estoque -->
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Estoque</a>
-    <div class="dropdown-menu p-3 rounded-3 shadow-lg bg-light">
-                <ul class="list-unstyled">
-                                <li class="mb-2">
-<a href="#">Alimentar estoque</a>
-</li>
-<li class="mb-2">
-<a href="#">Etiquetas</a>
-</li>
-</ul>
-</div>
-</div>
-<!-- Cadastro -->
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Cadastro</a>
-<div class="dropdown-menu">
-<a href="#">Produto</a>
-<a href="#">Fornecedor</a>
-<a href="#">Categoria</a>
-</div>
-</div>
-
-<!-- PDV -->
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">PDV</a>
-<div class="dropdown-menu">
-<a href="#">Realizar venda</a>
-<a href="#">Abrir caixa</a>
-<a href="#">Ver caixa</a>
-</div>
-</div>
-
-<!-- Relatorios -->
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Relatórios</a>
-<div class="dropdown-menu">
-
-<!-- lista de relatórios -->
-</div>
-</div>
-
-
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <!-- Início -->
+        <a class="navbar-brand text-primary fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+            <span class="icon">🏠</span> Início
+        </a>
+        
+        <!-- Botão de menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navegação expandida -->
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <!-- Estoque -->
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
+                    <span class="icon">📦</span> Estoque
+                </a>
+                <div class="dropdown-menu p-3 rounded-3 shadow-lg bg-light">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Alimentar Estoque</a></li>
+                        <li class="mb-2"><a href="#">Etiquetas</a></li>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            
+            <!-- Cadastro -->
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
+                    <span class="icon">📝</span> Cadastro
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#">Produto</a>
+                    <a href="#">Fornecedor</a>
+                    <a href="#">Categoria</a>
+                </div>
+            </div>
+            
+            <!-- PDV -->
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
+                    <span class="icon">💳</span> PDV
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#">Realizar Venda</a>
+                    <a href="#">Abrir Caixa</a>
+                    <a href="#">Ver Caixa</a>
+                </div>
+            </div>
+            
+            <!-- Relatórios -->
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
+                    <span class="icon">📊</span> Relatórios
+                </a>
+                <div class="dropdown-menu">
+                    <!-- Lista de relatórios -->
+                </div>
+            </div>
+        </div>
     </div>
+</nav>
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+            @RenderBody()
+</main>
+</div>
+    
 
     <footer class="border-top footer text-muted">
         <div class="container">
