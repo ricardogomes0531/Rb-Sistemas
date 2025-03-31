@@ -1,0 +1,22 @@
+﻿<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0 text-center">Cadastro de Fornecedor</h3>
+        </div>
+        <div class="card-body p-4">
+            <form method="post" action="/Fornecedor/Cadastrar">
+                <div class="mb-4">
+                    <label for="nome" class="form-label text-primary fw-bold">Nome</label>
+                    <input type="text" class="form-control rounded-pill px-3 py-2 shadow-sm" id="nome" name="nome" placeholder="Informe o nome do fornecedor" required>
+                </div>
+                <div class="mb-4">
+                    <label for="descricao" class="form-label text-primary fw-bold">Descrição</label>
+                    <textarea class="form-control rounded-3 px-3 py-2 shadow-sm" id="descricao" name="descricao" placeholder="Informe uma breve descrição" rows="3"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-success rounded-pill px-4 py-2 shadow" onClick="validarCadastro()">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

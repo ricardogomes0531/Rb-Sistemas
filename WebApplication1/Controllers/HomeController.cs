@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Web.Filtros;
 using Web.Shared.Repository.Interfaces;
 using WebApplication1.Models;
 
@@ -18,14 +19,17 @@ namespace WebApplication1.Controllers
             _repo = repo;
         }
 
-        public async Task<IActionResult> Index()
+                        public async Task<IActionResult> Index()
         {
-            var resultado = await _repo.GetUserByIdAsync(1);
+            Response.Cookies.Append("login", "ej.ricardogomes@gmail.com");
+            ViewData["valor"] = "oi "+Request.Cookies["login"];
             return View();
         }
 
+        [PermissoesFilters]
         public IActionResult Privacy()
         {
+            ViewData["valor"] = "oi " + Request.Cookies["login"];
             return View();
         }
 
