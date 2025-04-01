@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Web.Filtros;
+using Web.Models.Fornecedor;
 using Web.Shared.Repository.Interfaces;
 using WebApplication1.Models;
 
@@ -24,7 +25,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Cadastrar()
+        public async Task<IActionResult> Cadastrar(FornecedorRequest request)
         {
             return View();
         }

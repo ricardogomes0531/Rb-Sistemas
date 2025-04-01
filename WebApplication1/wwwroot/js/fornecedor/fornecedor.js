@@ -1,12 +1,16 @@
-﻿function validarCadastro()
+﻿    function validarCadastro()
 {
-if (document.form1.nome.value == "")
-{
-alert("Favor preencher o nome do fornecedor.");
-}
-else
-{
-document.form1.submit();
-}
+        $.ajax({
+            type: 'POST',
+            url: "fornecedor/cadastrar",
+            async: false,
+data: {
 
-}
+},
+            success: function (data) {
+$("#resultadoResp").html(data);            
+    }
+              });
+          
+    }
+    

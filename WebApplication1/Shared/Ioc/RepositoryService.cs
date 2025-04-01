@@ -7,7 +7,10 @@ namespace Web.Shared.Ioc
     {
         public static IServiceCollection AddRepositoryServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
+            services
+                .AddScoped<IUserRepository, UserRepository>()
+                                .AddScoped<IFornecedorRepository, FornecedorRepository>()
+                ;
             return services;
         }
     }

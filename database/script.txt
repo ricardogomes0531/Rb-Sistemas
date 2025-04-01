@@ -1,3 +1,3 @@
 use rb_sistemas;
 create table estabelecimento(id int primary key auto_increment, nome varchar(200) not null, documento varchar(20) not null, tipo_documento char(4) not null, categoria int not null);
-create table fornecedor(id int primary key auto_increment, nome varchar(300) not null, descricao varchar(300), estabelecimentoId int not null, dataInclusao datetime, usuarioInclusao varchar(300), dataAlteracao datetime, usuarioAlteracao varchar(300));
+create table fornecedor(id int primary key auto_increment, idEstabelecimento int not null, nome varchar(300) not null, descricao varchar(500), email varchar(300) not null, ddd_celular char(3), celular varchar(15), ddd_telefone char(3), telefone varchar(15), uf char(2), formaPagamentoPrincipal varchar(50), dataInsersao datetime, usuarioInsersao varchar(300), dataAlteracao datetime, usuarioAlteracao varchar(300));
