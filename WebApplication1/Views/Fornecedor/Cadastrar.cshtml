@@ -1,95 +1,141 @@
-﻿<div class="container mt-5">
-    <div class="card shadow-lg border-0">
-        <div class="card-header bg-primary text-white rounded-top">
-            <h3 class="mb-0 text-center">Cadastro de Fornecedor</h3>
-        </div>
-        <div class="card-body p-4">
-            <form name="form1" method="post" action="/Fornecedor/Cadastrar">
-                <!-- Nome -->
-                <div class="mb-4">
-                    <label for="nome" class="form-label text-primary fw-bold">Nome</label>
-                    <input type="text" class="form-control rounded-pill px-3 py-2 shadow-sm" id="nome" name="nome" placeholder="Informe o nome do fornecedor" required>
+﻿<div class="container">
+    <main role="main" class="pb-3">
+        <h2 class="text-primary fw-bold">Cadastro de Fornecedor</h2>
+        <form name="form1">
+            <!-- Tipo de Fornecedor -->
+            <div class="mb-3">
+                <label for="tipoFornecedor" class="form-label">Tipo</label>
+                <select id="tipoFornecedor" name="tipoFornecedor" class="form-select">
+                    <option value="fisica">Pessoa Física</option>
+                    <option value="juridica">Pessoa Jurídica</option>
+                </select>
+            </div>
+
+            <!-- Documento -->
+            <div class="mb-3">
+                <label for="documento" class="form-label">Documento</label>
+                <input type="text" id="documento" name="documento" class="form-control" placeholder="CPF ou CNPJ" required>
+            </div>
+
+            <!-- Nome -->
+            <div class="mb-3">
+                <label for="nomeFornecedor" class="form-label">Nome</label>
+                <input type="text" id="nomeFornecedor" name="nomeFornecedor" class="form-control" placeholder="Nome do fornecedor" required>
+            </div>
+
+            <!-- Descrição -->
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea id="descricao" name="descricao" class="form-control" rows="3" placeholder="Breve descrição sobre o fornecedor"></textarea>
+            </div>
+
+            <!-- DddTelefone -->
+            <div class="mb-3">
+                <label for="dddTelefone" class="form-label">DDD Telefone</label>
+                <input type="text" id="dddTelefone" name="dddTelefone" class="form-control" placeholder="Nome do fornecedor" required>
+            </div>
+
+            <!-- Telefone -->
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Nome do fornecedor" required>
+            </div>
+
+            <!-- DddCelular -->
+            <div class="mb-3">
+                <label for="dddCelular" class="form-label">DDD Celiular</label>
+                <input type="text" id="dddCelular" name="dddCelular" class="form-control" placeholder="Nome do fornecedor" required>
+            </div>
+
+            <!-- Celular -->
+            <div class="mb-3">
+                <label for="Celular" class="form-label">Celular</label>
+                <input type="text" id="celular" name="celular" class="form-control" placeholder="Nome do fornecedor" required>
+            </div>
+
+            <!-- Endereço -->
+            <div class="mb-3">
+                <label for="endereco" class="form-label">Endereço</label>
+                <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Rua, Avenida, Alameda" required>
+            </div>
+
+            <!-- Bairro -->
+            <div class="mb-3">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input type="text" id="bairro" name="bairro" class="form-control" required>
+            </div>
+
+            <!-- Cidade -->
+            <div class="mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input type="text" id="cidade" name="cidade" class="form-control" placeholder="Cidade" required>
+            </div>
+
+            <!-- Estado -->
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <select id="estado" name="estado" class="form-select" required>
+                    <option value="" selected disabled>Selecione um estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <!-- CEP -->
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" id="cep" name="cep" class="form-control" placeholder="00000-000" required>
+            </div>
+
+            <!-- Forma de Pagamento -->
+            <div class="mb-3">
+                <label class="form-label">Forma de pagamento principal</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="debito" name="formaPagamento" value="debito">
+                    <label for="debito" class="form-check-label">Débito</label>
                 </div>
-                <!-- Descrição -->
-                <div class="mb-4">
-                    <label for="descricao" class="form-label text-primary fw-bold">Descrição</label>
-                    <textarea class="form-control rounded-3 px-3 py-2 shadow-sm" id="descricao" name="descricao" placeholder="Informe uma breve descrição" rows="3" required></textarea>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="credito" name="formaPagamento" value="credito">
+                    <label for="credito" class="form-check-label">Crédito</label>
                 </div>
-                <!-- Contato -->
-                <div class="mb-4">
-                    <label for="email" class="form-label text-primary fw-bold">E-mail</label>
-                    <input type="email" class="form-control rounded-pill px-3 py-2 shadow-sm" id="email" name="email" placeholder="Informe o e-mail do fornecedor">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="transferencia" name="formaPagamento" value="transferencia">
+                    <label for="transferencia" class="form-check-label">Transferência Bancária</label>
                 </div>
-                <div class="mb-4">
-                    <label for="telefone" class="form-label text-primary fw-bold">Telefone</label>
-                    <input type="tel" class="form-control rounded-pill px-3 py-2 shadow-sm" id="telefone" name="telefone" placeholder="Informe o telefone do fornecedor">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="pix" name="formaPagamento" value="pix">
+                    <label for="pix" class="form-check-label">Pix</label>
                 </div>
-                <!-- Endereço -->
-                <div class="mb-4">
-                    <label for="estado" class="form-label text-primary fw-bold">Estado</label>
-                    <select class="form-select rounded-pill px-3 py-2 shadow-sm" id="estado" name="estado" required>
-                        <option value="" selected disabled>Selecione o estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-                <!-- Forma de Pagamento -->
-                <div class="mb-4">
-                    <label class="form-label text-primary fw-bold">Forma de Pagamento Preferida</label>
-                    <div class="px-3 py-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="forma_pagamento" id="debito" value="Débito" required>
-                            <label class="form-check-label" for="debito">Débito</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="forma_pagamento" id="credito" value="Crédito">
-                            <label class="form-check-label" for="credito">Crédito</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="forma_pagamento" id="boleto" value="Boleto">
-                            <label class="form-check-label" for="boleto">Boleto</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="forma_pagamento" id="pix" value="Pix">
-                            <label class="form-check-label" for="pix">Pix</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="forma_pagamento" id="transferencia" value="Transferência">
-                            <label class="form-check-label" for="transferencia">Transferência</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- Botão -->
-                <div class="text-center">
-                    <button type="button" class="btn btn-success rounded-pill px-4 py-2 shadow" onclick="validarCadastro()">Cadastrar</button>
-                </div>
-            </form>
-        </div>
-    </div>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <button type="button" onclick="salvar()" class="btn btn-primary">Cadastrar Fornecedor</button>
+        </form>
+    </main>
 </div>
-    <script src="~/js/fornecedor/fornecedor.js"></script>
+<script src="~/js/fornecedor/fornecedor.js" asp-append-version="true"></script>

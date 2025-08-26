@@ -1,4 +1,5 @@
-﻿<div class="container mt-5">
+﻿@model List<Web.Shared.Domain.Fornecedor>
+<div class="container mt-5">
     <!-- Botão para Adicionar Novo Fornecedor -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="text-primary">Lista de Fornecedores</h3>
@@ -22,24 +23,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Exemplo de linhas dinâmicas -->
-                    <tr>
-                        <td>Fornecedor 1</td>
-                        <td>Descrição do fornecedor 1</td>
-                        <td>01/01/2025</td>
-                        <td>15/01/2025</td>
-                        <td>Admin</td>
-                        <td>Editor</td>
+                    <!-- Listagem dos fornecedores -->
+                    @{
+                        foreach(var fornecedor in Model)
+                        {
+
+                        
+                        
+                        <tr>
+                        <td>@fornecedor.Nome
+                        </td>
+                        <td>@fornecedor.Descricao </td>
+                        <td>@fornecedor.DataInsersao</td>
+                        <td>@fornecedor.DataAlteracao</td>
+                        <td>@fornecedor.UsuarioInsersao</td>
+                        <td>@fornecedor.UsuarioAlteracao</td>
                     </tr>
-                    <tr>
-                        <td>Fornecedor 2</td>
-                        <td>Descrição do fornecedor 2</td>
-                        <td>02/01/2025</td>
-                        <td>16/01/2025</td>
-                        <td>Admin</td>
-                        <td>Editor</td>
-                    </tr>
-                    <!-- Substitua essas linhas pelos dados reais -->
+                        }
+                        }
+                    
                 </tbody>
             </table>
         </div>

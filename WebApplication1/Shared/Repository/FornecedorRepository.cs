@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Web.Shared.Domain;
 using Web.Shared.Repository.Interfaces;
+using Web.Shared.Repository.Models;
 using Web.Shared.Repository.Querys;
 
 namespace Web.Shared.Repository
@@ -20,13 +21,56 @@ namespace Web.Shared.Repository
             _connection.Open();
         }
 
-        public async Task<IList<User>> GetUserByIdAsync(int id)
+        public async Task<IEnumerable<Fornecedor>> ListarTodos()
         {
-            var query = await _connection.QueryAsync<User>(UserQuery.GetUserByIdQuery(), new
+            var fornecedores = new List<Fornecedor>();
+            try
             {
-                id
-            });
-            return query.ToList();
+                fornecedores = _connection.QueryAsync<Fornecedor>(FornecedorQuery.ListarTodos()).Result.ToList();
+
+
+            }
+            
+            catch(Exception ex)
+            {
+                var message = ex.Message;
+            }
+            return fornecedores;
+        }
+        public async Task<bool> Inserir(FornecedorModel model)
+        {
+            var result = false;
+            try
+            {
+
+                var query = await _connection.ExecuteAsync(FornecedorQuery.Inserir(), new
+                {
+                    model.Nome,
+                    model.Descricao,
+                    model.Email,
+                    model.DddCelular,
+                    model.Celular,
+                    model.DddTelefone,
+                    model.Telefone,
+                    model.Documento,
+                    model.Endereco,
+                    model.Bairro,
+                    model.Cidade,
+                    model.Uf,
+                    model.Cep,
+                                        model.FormaPagamentoPrincipal
+                });
+                if (query > 0)
+                {
+                    result = true;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                var resultEx = ex.Message;
+            }
+            return result;
         }
 
 

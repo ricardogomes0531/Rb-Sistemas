@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Web.Filtros;
 using Web.Models.Fornecedor;
 using Web.Shared.Repository.Interfaces;
+using Web.Shared.Repository.Models;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -10,24 +11,50 @@ namespace WebApplication1.Controllers
     public class FornecedorController : Controller
     {
         private readonly ILogger<FornecedorController> _logger;
-        private readonly IUserRepository _repo;
+        private readonly IFornecedorRepository _repo;
 
         public FornecedorController(ILogger<FornecedorController> logger,
-            IUserRepository repo
+            IFornecedorRepository repo
             )
         {
             _logger = logger;
             _repo = repo;
         }
-
+        
         public async Task<IActionResult> Index()
+        {
+            var fornecedor = await _repo.ListarTodos();
+            return View(fornecedor);
+        }
+
+        public async Task<IActionResult> Cadastrar()
         {
             return View();
         }
 
-        public async Task<IActionResult> Cadastrar(FornecedorRequest request)
+
+        [HttpPost]
+        public async Task<JsonResult> Cadastrar(FornecedorRequest request)
         {
-            return View();
+            var insereRequest = new FornecedorModel()
+            {
+                 Celular = request.Celular,
+                  DddCelular = request.DddCelular,
+                   DddTelefone = request.DddTelefone,
+                     Descricao = request.Descricao,
+                      Email = request.Email,
+                       FormaPagamentoPrincipal = request.FormaPagamentoPrincipal,
+                        Nome = request.Nome,
+                         Telefone = request.Telefone,
+                         Documento = request.Documento,
+                          Bairro = request.Bairro,
+                           Cep = request.Cep,
+                            Cidade = request.Cidade,
+                             Endereco = request.Endereco,
+                                                        Uf = request.Uf
+            };
+            var insereResult = await _repo.Inserir(insereRequest);
+            return Json(new { });
         }
     }
 }
