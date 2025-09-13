@@ -1,0 +1,50 @@
+﻿@model List<Web.Shared.Domain.Fornecedor>
+<div class="container mt-5">
+    <!-- Botão para Adicionar Novo Fornecedor -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="text-primary">Lista de Clientes</h3>
+        <a href="/Clientes/Novo" class="btn btn-success rounded-pill px-4 py-2 shadow">
+            Adicionar Novo Cliente
+        </a>
+    </div>
+
+    <!-- Card com Tabela -->
+    <div class="card shadow-lg border-0">
+        <div class="card-body p-4">
+            <table class="table table-striped table-bordered shadow-sm rounded">
+                <thead class="table-light">
+                    <tr class="text-center">
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data de Cadastro</th>
+                        <th scope="col">Data da Alteração</th>
+                        <th scope="col">Usuário que Cadastrou</th>
+                        <th scope="col">Usuário que Alterou</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Listagem dos fornecedores -->
+                    @{
+                        foreach (var fornecedor in Model)
+                        {
+
+
+
+                            <tr>
+                                <td>
+                                    @fornecedor.Nome
+                                </td>
+                                <td>@fornecedor.Descricao </td>
+                                <td>@fornecedor.DataInsersao</td>
+                                <td>@fornecedor.DataAlteracao</td>
+                                <td>@fornecedor.UsuarioInsersao</td>
+                                <td>@fornecedor.UsuarioAlteracao</td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
