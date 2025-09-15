@@ -4,7 +4,7 @@
     {
         public static string Inserir()
         {
-            return @"insert into Cliente(nome, email, DddCelular, Celular, DataNascimento, DataInsersao, UsuarioInsersao, DataAlteracao, UsuarioAlteracao) values(@nome, @email, @DddCelular, @Celular, @DataNascimento, @DataInsersao, @UsuarioInsersao, @DataAlteracao, @UsuarioAlteracao);";
+            return @"insert into Cliente(nome, email, DddCelular, Celular, DataNascimento, DataInsersao, UsuarioInsersao, DataAlteracao, UsuarioAlteracao) values(@nome, @email, @DddCelular, @Celular, @DataNascimento, now(), @UsuarioInsersao, null, null);";
                     }
 
         public static string ListarTodos()

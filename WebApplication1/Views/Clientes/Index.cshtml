@@ -1,4 +1,4 @@
-﻿@model List<Web.Shared.Domain.Fornecedor>
+﻿@model List<Web.Shared.Domain.Cliente>
 <div class="container mt-5">
     <!-- Botão para Adicionar Novo Fornecedor -->
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -15,8 +15,11 @@
                 <thead class="table-light">
                     <tr class="text-center">
                         <th scope="col">Nome</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Data de Cadastro</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Ddd Celular</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Data de Nascimento</th>
+                                                                        <th scope="col">Data de Cadastro</th>
                         <th scope="col">Data da Alteração</th>
                         <th scope="col">Usuário que Cadastrou</th>
                         <th scope="col">Usuário que Alterou</th>
@@ -25,20 +28,20 @@
                 <tbody>
                     <!-- Listagem dos fornecedores -->
                     @{
-                        foreach (var fornecedor in Model)
+                        foreach (var item in Model)
                         {
-
-
-
                             <tr>
                                 <td>
-                                    @fornecedor.Nome
+                                    @item.Nome
                                 </td>
-                                <td>@fornecedor.Descricao </td>
-                                <td>@fornecedor.DataInsersao</td>
-                                <td>@fornecedor.DataAlteracao</td>
-                                <td>@fornecedor.UsuarioInsersao</td>
-                                <td>@fornecedor.UsuarioAlteracao</td>
+                                <td>@item.Email</td>
+                                <td>@item.DddCelular</td>
+                                <td>@item.Celular</td>
+                                <td>@item.DataNascimento</td>
+                                                                <td>@item.DataInsersao</td>
+                                <td>@item.DataAlteracao</td>
+                                <td>@item.UsuarioInsersao</td>
+                                <td>@item.UsuarioAlteracao</td>
                             </tr>
                         }
                     }

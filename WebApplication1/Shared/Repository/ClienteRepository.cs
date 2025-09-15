@@ -26,7 +26,7 @@ namespace Web.Shared.Repository
             var clientes = new List<Cliente>();
             try
             {
-                clientes = _connection.QueryAsync<Cliente>(FornecedorQuery.ListarTodos()).Result.ToList();
+                clientes = [.. _connection.QueryAsync<Cliente>(ClienteQuery.ListarTodos()).Result];
 
 
             }
