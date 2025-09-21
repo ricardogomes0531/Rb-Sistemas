@@ -26,7 +26,7 @@ namespace Web.Shared.Repository
             var clientes = new List<Cliente>();
             try
             {
-                clientes = [.. _connection.QueryAsync<Cliente>(ClienteQuery.ListarTodos()).Result];
+                clientes = _connection.QueryAsync<Cliente>(ClienteQuery.ListarTodos()).Result.ToList();
 
 
             }
@@ -51,6 +51,7 @@ namespace Web.Shared.Repository
                     model.DddCelular,
                                         model.Celular,
                                         model.DataNascimento,
+                                        model.Sexo,
                                         model.DataInsersao,
                                         model.UsuarioInsersao,
                                         model.DataAlteracao,

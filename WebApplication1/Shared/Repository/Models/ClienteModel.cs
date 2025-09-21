@@ -6,6 +6,7 @@ namespace Web.Shared.Repository.Models
     {
         public string Nome { get; set; }
 
+        public string Sexo { get; set; }
         public string Email { get; set; }
 
         public string DddCelular { get; set; }

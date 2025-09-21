@@ -4,12 +4,12 @@
     {
         public static string Inserir()
         {
-            return @"insert into Cliente(nome, email, DddCelular, Celular, DataNascimento, DataInsersao, UsuarioInsersao, DataAlteracao, UsuarioAlteracao) values(@nome, @email, @DddCelular, @Celular, @DataNascimento, now(), @UsuarioInsersao, null, null);";
+            return @"insert into Cliente(nome, email, DddCelular, Celular, DataNascimento, Sexo, DataInsersao, UsuarioInsersao, DataAlteracao, UsuarioAlteracao) values(@nome, @email, @DddCelular, @Celular, @DataNascimento, @Sexo, now(), @UsuarioInsersao, null, null);";
                     }
 
         public static string ListarTodos()
         {
-            return @"select nome as Nome, Email as Email, DddCelular as DddCelular, Celular as Celular, DataNascimento as DataNascimento from Cliente;";
+            return @"select nome as Nome, Sexo as Sexo, Email as Email, DddCelular as DddCelular, Celular as Celular, DataNascimento as DataNascimento from Cliente;";
         }
     }
 }

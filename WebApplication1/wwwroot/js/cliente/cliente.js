@@ -6,8 +6,9 @@
         data: {
             Celular: document.form1.celular.value,
             DddCelular: document.form1.dddCelular.value,
-            Email: "teste@teste.com",
+            Email: document.form1.email.value,
             Nome: document.form1.nome.value,
+            Sexo: document.form1.sexo.value,
             DataNascimento: document.form1.dataNascimento.value
                     },
         success: function (data) {

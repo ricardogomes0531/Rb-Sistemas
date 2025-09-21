@@ -43,6 +43,7 @@ namespace Web.Controllers
                      DddCelular = request.DddCelular,
                       Email = request.Email,
                        Nome = request.Nome,
+                        Sexo = request.Sexo,
                         UsuarioAlteracao = request.UsuarioAlteracao,
                          UsuarioInsersao = request.UsuarioInsersao
 
