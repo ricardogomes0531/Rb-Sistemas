@@ -21,6 +21,7 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("iniciando consulta");
          var cliente = await _repo.ListarTodos();
             return View(cliente);
         }
