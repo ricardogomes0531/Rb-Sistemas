@@ -5,3 +5,5 @@ create table fornecedor(id int primary key auto_increment, idEstabelecimento int
 create table Cliente(CodigoCliente int auto_increment primary key, Nome varchar(200), Email varchar(200), DddCelular char(2), Celular char(9), DataNascimento date);
 
 CREATE TABLE Logs (Id INT AUTO_INCREMENT PRIMARY KEY, Timestamp DATETIME, Level VARCHAR(50), Message TEXT, Exception TEXT, Properties TEXT);
+create table Empresa(CodigoEmpresa int auto_increment primary key, Nome varchar(200) not null, RazaoSocial varchar(500) not null, Documento varchar(20), DataInsersao datetime, UsuarioInsersao varchar(300), DataAlteracao datetime, UsuarioAlteracao varchar(300));
+create table Usuarios(CodigoUsuario int auto_increment primary key, Nome varchar(200) not null, Password varchar(500) not null, Perfil varchar(30) not null, CodigoEmpresa int not null, DataInsersao datetime, UsuarioInsersao varchar(300), DataAlteracao datetime, UsuarioAlteracao varchar(300));
