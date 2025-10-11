@@ -9,7 +9,7 @@
 
         public static string ListarTodos()
         {
-            return @"select nome as Nome, Sexo as Sexo, Email as Email, DddCelular as DddCelular, Celular as Celular, DataNascimento as DataNascimento from Cliente;";
+            return @"select nome as Nome, Sexo as Sexo, Email as Email, DddCelular as DddCelular, Celular as Celular, DataNascimento as DataNascimento, DataInsersao as DataInsersao, UsuarioInsersao as UsuarioInsersao, DataAlteracao as DataAlteracao, UsuarioAlteracao as UsuarioAlteracao from Cliente;";
         }
     }
 }

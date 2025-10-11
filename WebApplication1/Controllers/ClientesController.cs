@@ -21,7 +21,16 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            _logger.LogInformation("iniciando consulta");
+            try
+            {
+
+
+                _logger.LogInformation("iniciando consulta");
+            }
+            catch (Exception ex)
+            {
+                var e = ex;
+            }
          var cliente = await _repo.ListarTodos();
             return View(cliente);
         }
