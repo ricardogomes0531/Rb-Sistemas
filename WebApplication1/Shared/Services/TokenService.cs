@@ -39,7 +39,7 @@ namespace Web.Shared.Services
             var ci = new ClaimsIdentity();
             ci.AddClaim(new Claim(ClaimTypes.Name, user.Name));
             ci.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
-            ci.AddClaim(new Claim("empresa", user.Empresa));
+            //ci.AddClaim(new Claim("empresa", user.Empresa));
             ci.AddClaim(new Claim("idEmpresa", user.IdEmpresa.ToString()));
             foreach (var role in user.Roles)
                 ci.AddClaim(new Claim(ClaimTypes.Role, role));

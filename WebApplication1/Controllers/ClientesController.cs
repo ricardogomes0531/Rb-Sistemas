@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Web.Models.Cliente;
 using Web.Models.Fornecedor;
 using Web.Shared.Repository.Interfaces;
@@ -18,7 +19,7 @@ namespace Web.Controllers
             _logger = logger;
             _repo = repo;
         }
-
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             try
@@ -34,13 +35,13 @@ namespace Web.Controllers
          var cliente = await _repo.ListarTodos();
             return View(cliente);
         }
-
+        [Authorize]
         public async Task<IActionResult> Novo()
         {
             return View();
         }
 
-
+        [Authorize]
         [HttpPost]
         public async Task<JsonResult> Cadastrar(ClienteRequest request)
         {

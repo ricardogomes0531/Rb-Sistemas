@@ -4,7 +4,7 @@
     {
         public static string Buscar()
         {
-            return @"select CodigoUsuario as CodigoUsuario, Nome as Nome, Password as Password, Perfil as Perfil, CodigoEmpresa as CodigoEmpresa, Empresa as Empresa from Usuarios where email=@email and password=@senha;";
+            return @"select CodigoUsuario as Id, Nome as Nome, Password as Senha, Perfil as Perfil, CodigoEmpresa as IdEmpresa from Usuarios where Email=@email and Password=@senha;";
         }
     }
 }

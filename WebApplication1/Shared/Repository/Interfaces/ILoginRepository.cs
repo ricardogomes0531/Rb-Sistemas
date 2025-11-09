@@ -5,6 +5,6 @@ namespace Web.Shared.Repository.Interfaces
 {
     public interface ILoginRepository
     {
-        Task<UsuarioModel> Buscar(string email, string senha);
+        Task<UsuarioModel> Validar(string email, string senha);
     }
 }

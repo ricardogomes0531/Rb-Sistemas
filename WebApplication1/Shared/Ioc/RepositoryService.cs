@@ -11,6 +11,7 @@ namespace Web.Shared.Ioc
                 .AddScoped<IUserRepository, UserRepository>()
                                 .AddScoped<IFornecedorRepository, FornecedorRepository>()
                                 .AddScoped<IClienteRepository, ClienteRepository>()
+                                .AddScoped<ILoginRepository, LoginRepository>()
                 ;
             return services;
         }

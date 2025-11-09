@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.SqlClient;
+using Web.Models;
 using Web.Shared.Domain;
 using Web.Shared.Repository.Interfaces;
 using Web.Shared.Repository.Models;
@@ -21,7 +22,7 @@ namespace Web.Shared.Repository
             _connection.Open();
         }
 
-        public async Task<UsuarioModel> Buscar(string email, string senha)
+        public async Task<UsuarioModel> Validar(string email, string senha)
         {
             var usuario = new UsuarioModel();
             try
@@ -32,9 +33,8 @@ namespace Web.Shared.Repository
                         email,
                         senha
                     }
-                                        )
-                    .Result.FirstOrDefault();
-            }
+                                        ).Result.FirstOrDefault();
+                                                }
 
             catch (Exception ex)
             {

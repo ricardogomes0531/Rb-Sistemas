@@ -37,6 +37,26 @@ builder.Services
                          IssuerSigningKey = new SymmetricSecurityKey
                        (Encoding.UTF8.GetBytes(builder.Configuration["secretKey"]))
                      };
+
+                     options.Events = new JwtBearerEvents
+                     {
+                         OnMessageReceived = context =>
+                         {
+                             var token = context.Request.Cookies["jwtToken"];
+                             if (!string.IsNullOrEmpty(token))
+                             {
+                                 context.Token = token;
+                             }
+                             return Task.CompletedTask;
+                         },
+                         OnChallenge = context =>
+                         {
+                             context.HandleResponse();
+                             context.Response.Redirect("/Login/index");
+                             return Task.CompletedTask;
+                         }
+                     };
+
                  });
         
                     
