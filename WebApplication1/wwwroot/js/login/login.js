@@ -9,7 +9,7 @@
         },
         success: function (data) {
             document.cookie = "jwtToken=" + data.token + "; path=/";
-            alert(data.token);
+            window.location.href = "/home";
         }
     });
 
