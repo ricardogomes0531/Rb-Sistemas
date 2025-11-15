@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Filtros;
 using Web.Shared.Repository.Interfaces;
@@ -18,7 +19,7 @@ namespace WebApplication1.Controllers
             _logger = logger;
             _repo = repo;
         }
-
+        [Authorize]
                         public async Task<IActionResult> Index()
         {
             Response.Cookies.Append("login", "ej.ricardogomes@gmail.com");

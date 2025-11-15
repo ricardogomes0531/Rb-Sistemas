@@ -24,7 +24,19 @@
         
         <!-- Navegação expandida -->
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <!-- Agendamento -->
+
+                <!-- Opção de Logout -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
+                        <span class="icon">👤</span> Usuário
+                    </a>
+                    <div class="dropdown-menu p-3 rounded-3 shadow-lg bg-light">
+                        <a href="javascript:sair()" class="dropdown-item text-danger">Sair</a>
+                    </div>
+                </div>
+
+
+                <!-- Agendamento -->
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle text-primary" data-bs-toggle="dropdown">
                         <span class="icon">📅</span> Agenda
@@ -100,7 +112,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/js/login/login.js" asp-append-version="true"></script>
     <script src="~/js/utils/utils.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

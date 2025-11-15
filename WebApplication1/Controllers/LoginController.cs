@@ -32,7 +32,7 @@ namespace Web.Controllers
         {
             var token = string.Empty;
             var usuarioValido = _repo.Validar(request.Email, request.Senha).Result;
-            if (usuarioValido.Id > default(int))
+            if (usuarioValido is not null && usuarioValido.Id > default(int))
             {
                 var roles = new string[1];
                 roles[0] = usuarioValido.Perfil;

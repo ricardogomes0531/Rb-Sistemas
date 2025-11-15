@@ -15,3 +15,8 @@
 
 }
 
+
+function sair() {
+    document.cookie = "jwtToken=" + "" + "; path=/";
+    window.location.href = "/home";
+    }
