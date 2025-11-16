@@ -22,7 +22,9 @@ namespace WebApplication1.Controllers
         [Authorize]
                         public async Task<IActionResult> Index()
         {
-            Response.Cookies.Append("login", "ej.ricardogomes@gmail.com");
+
+            //Response.Cookies.Append("login", "ej.ricardogomes@gmail.com");
+            ViewData["userName"] = User.Identity.Name;
             ViewData["valor"] = "oi "+Request.Cookies["login"];
             return View();
         }
